@@ -2,7 +2,6 @@ import Head from 'next/head';
 
 const siteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL;
 const name = 'Finance & Analytics Club IITK';
-const twitterHandle = '@hamishMW';
 const defaultOgImage = `${siteUrl}/social-image.png`;
 
 export const Meta = ({ title, description, prefix = name, ogImage = defaultOgImage }) => {
@@ -13,6 +12,10 @@ export const Meta = ({ title, description, prefix = name, ogImage = defaultOgIma
       <title key="title">{titleText}</title>
       <meta key="description" name="description" content={description} />
       <meta name="author" content={name} />
+      <meta
+        name="google-site-verification"
+        content="88l5XIiHT8NkWBv6aePNwq80DskXEt6W1fUH0m7KNXk"
+      />
 
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:alt" content="Banner for the site" />
@@ -29,8 +32,6 @@ export const Meta = ({ title, description, prefix = name, ogImage = defaultOgIma
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:title" content={titleText} />
-      <meta name="twitter:site" content={twitterHandle} />
-      <meta name="twitter:creator" content={twitterHandle} />
       <meta name="twitter:image" content={ogImage} />
     </Head>
   );

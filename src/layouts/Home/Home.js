@@ -83,8 +83,8 @@ export const Home = () => {
     <div className={styles.home}>
       <Meta
         title=""
-        description="Design portfolio of Hamish Williams — a product designer working on web & mobile
-          apps with a focus on motion, experience design, and accessibility."
+        description="Finance & Analytics Club, IIT Kanpur — projects, events, articles and the team
+          behind the club's work in finance, economics and data analytics."
       />
       <Intro
         id="intro"

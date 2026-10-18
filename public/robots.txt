@@ -1,1 +1,4 @@
 User-agent: *
+Allow: /
+
+Sitemap: https://fac-web-beige.vercel.app/sitemap.xml
