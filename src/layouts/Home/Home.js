@@ -14,6 +14,9 @@ import sliceTextureLarge from 'assets/team.jpeg';
 import sliceTexturePlaceholder from 'assets/team.jpeg';
 import sliceTexture from 'assets/team.jpeg';
 import quantForecastTexture from 'assets/QuantForecast.jpg';
+import researchTextureLarge from 'assets/research/fabl-laptop-large.jpg';
+import researchTexturePlaceholder from 'assets/research/fabl-laptop-placeholder.jpg';
+import researchTexture from 'assets/research/fabl-laptop.jpg';
 import sprTextureLarge from 'assets/spr-lesson-builder-dark-large.jpg';
 import sprTexturePlaceholder from 'assets/spr-lesson-builder-dark-placeholder.jpg';
 import sprTexture from 'assets/spr-lesson-builder-dark.jpg';
@@ -42,9 +45,10 @@ export const Home = () => {
   const projectThree = useRef();
   const details = useRef();
   const projectFour = useRef();
+  const research = useRef();
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, projectThree, projectFour, details];
+    const sections = [intro, projectOne, projectTwo, projectThree, research, projectFour, details];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -168,10 +172,31 @@ export const Home = () => {
         }}
       />
       <ProjectSummary
+        id="research"
+        sectionRef={research}
+        visible={visibleSections.includes(research.current)}
+        index={4}
+        title="Research Papers"
+        description="Original research by our members in quantitative finance — from Black-Litterman portfolio construction to covariance shrinkage and higher-moment optimisation."
+        buttonText="Read our research"
+        buttonLink="/research/"
+        model={{
+          type: 'laptop',
+          alt: 'Fama-French factor cumulative-performance chart from the club research paper',
+          textures: [
+            {
+              srcSet: [researchTexture, researchTextureLarge],
+              placeholder: researchTexturePlaceholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
         id="project-4"
+        alternate
         sectionRef={projectFour}
         visible={visibleSections.includes(projectFour.current)}
-        index={4}
+        index={5}
         title="Team"
         description="Meet the Finance and Analytics Club Team 2024"
         buttonText="View Team"

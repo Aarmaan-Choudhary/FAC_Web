@@ -21,6 +21,10 @@ export const navLinks = [
     pathname: '/articles',
   },
   {
+    label: 'Research',
+    pathname: '/research',
+  },
+  {
     label: 'Team',
     pathname: '/#project-4',
   },

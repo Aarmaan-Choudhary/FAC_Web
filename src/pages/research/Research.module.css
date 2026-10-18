@@ -1,0 +1,193 @@
+/* ---------- list page ---------- */
+.listSection {
+  padding-bottom: var(--space5XL);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space2XL);
+}
+
+.card {
+  padding: var(--space2XL);
+  border: 1px solid rgb(var(--rgbText) / 0.12);
+  border-radius: 8px;
+  background: rgb(var(--rgbBackgroundLight) / 0.6);
+  transition: border-color var(--durationM) ease;
+
+  &:hover,
+  &:focus-within {
+    border-color: rgb(var(--rgbAccent) / 0.6);
+  }
+
+  @media (--mediaMobile) {
+    padding: var(--spaceXL) var(--spaceL);
+  }
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: var(--spaceM);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cardLink {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover .cardTitle,
+  &:focus-visible .cardTitle {
+    color: rgb(var(--rgbAccent));
+  }
+}
+
+.cardTitle {
+  transition: color var(--durationM) ease;
+}
+
+.cardSubtitle {
+  margin-top: var(--spaceS);
+  color: var(--colorTextBody);
+}
+
+.cardSummary {
+  margin-top: var(--spaceL);
+  max-width: 72ch;
+}
+
+/* ---------- shared ---------- */
+.keywords {
+  list-style: none;
+  margin: var(--spaceL) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spaceS);
+}
+
+.keyword {
+  font-size: var(--fontSizeBodyXS, 0.8125rem);
+  padding: var(--spaceXS) var(--spaceM);
+  border-radius: 999px;
+  border: 1px solid rgb(var(--rgbText) / 0.16);
+  color: var(--colorTextLight);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spaceM);
+  margin-top: var(--spaceXL);
+}
+
+/* ---------- paper page ---------- */
+.figure {
+  margin: 0;
+}
+
+.caption {
+  display: block;
+  margin-top: var(--spaceM);
+  max-width: 80ch;
+}
+
+.stats {
+  margin: var(--space3XL) auto 0;
+  max-width: 940px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spaceL);
+
+  @media (--mediaTablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.stat {
+  padding-top: var(--spaceM);
+  border-top: 2px solid rgb(var(--rgbAccent));
+}
+
+.statValue {
+  font-size: var(--fontSizeH2);
+  font-weight: var(--fontWeightMedium);
+  color: var(--colorTextTitle);
+  line-height: 1.1;
+}
+
+.statLabel {
+  margin: var(--spaceXS) 0 0;
+  color: var(--colorTextLight);
+  font-size: var(--fontSizeBodyS);
+}
+
+.findings {
+  list-style: none;
+  counter-reset: finding;
+  margin: var(--space2XL) auto 0;
+  padding: 0;
+  max-width: 940px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space2XL) var(--space3XL);
+
+  @media (--mediaTablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.finding {
+  counter-increment: finding;
+  position: relative;
+  padding-left: var(--space2XL);
+
+  &::before {
+    content: counter(finding, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: var(--fontSizeBodyS);
+    color: rgb(var(--rgbAccent));
+    font-weight: var(--fontWeightMedium);
+  }
+}
+
+.findingTitle {
+  margin-bottom: var(--spaceS);
+}
+
+.figureGrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space2XL);
+  align-items: start;
+
+  @media (--mediaTablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.viewer {
+  margin-top: var(--space2XL);
+  border: 1px solid rgb(var(--rgbText) / 0.12);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgb(var(--rgbBackgroundLight));
+
+  /* phones generally can't render PDFs inline; the buttons above cover them */
+  @media (--mediaMobile) {
+    display: none;
+  }
+}
+
+.viewerFrame {
+  display: block;
+  width: 100%;
+  height: 85vh;
+  min-height: 600px;
+  border: 0;
+}

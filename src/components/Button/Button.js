@@ -10,8 +10,14 @@ function isExternalLink(href) {
   return href?.includes('://');
 }
 
+// Static files (e.g. research-paper PDFs in /public) are not Next.js pages, so they must be
+// plain links rather than client-side router navigations.
+function isFileLink(href) {
+  return /\.(pdf|zip|csv|xlsx?|docx?|pptx?)$/i.test(href || '');
+}
+
 export const Button = forwardRef(({ href, ...rest }, ref) => {
-  if (isExternalLink(href) || !href) {
+  if (isExternalLink(href) || isFileLink(href) || !href) {
     return <ButtonContent href={href} ref={ref} {...rest} />;
   }
 
