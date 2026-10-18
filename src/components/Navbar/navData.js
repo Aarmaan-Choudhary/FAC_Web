@@ -29,10 +29,6 @@ export const navLinks = [
     pathname: '/#project-4',
   },
 
-  {
-    label: 'Contact',
-    pathname: '/contact',
-  },
 ];
 
 export const socialLinks = [

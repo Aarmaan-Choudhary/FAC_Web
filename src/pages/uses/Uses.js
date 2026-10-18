@@ -51,7 +51,7 @@ export const Uses = () => {
                   <ListItem>
                     Any motion graphics I create are created in Adobe After Effects. So
                     far I haven’t found a non-Adobe product that’s as good. If anyone has
-                    suggestions please <Link href="/contact">message me</Link>.
+                    suggestions please let me know.
                   </ListItem>
                   <ListItem>
                     For any 3D models I use{' '}

@@ -2,7 +2,6 @@ import profileKatakana from 'assets/katakana-profile.svg?url';
 import profileImgLarge from 'assets/profile-large.jpg';
 import profileImgPlaceholder from 'assets/profile-placeholder.jpg';
 import profileImg from 'assets/profile.jpg';
-import { Button } from 'components/Button';
 import { DecoderText } from 'components/DecoderText';
 import { Divider } from 'components/Divider';
 import { Heading } from 'components/Heading';
@@ -103,16 +102,6 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   About Us
                 </div>
               </div>
-              <Button
-                secondary
-                className={styles.button}
-                data-visible={visible}
-                href="/contact"
-                icon="send"
-              >
-                Send us a message
-              </Button>
-              <br />
               <div className={styles.image}>
                 <Image
                   reveal
