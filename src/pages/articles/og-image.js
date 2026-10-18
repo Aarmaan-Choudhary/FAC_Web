@@ -23,15 +23,30 @@ export async function generateOgImage(props) {
     // file does not exists, so we create it
   }
 
-  const browser = await puppeteer.launch({ headless: true });
-  const page = await browser.newPage();
-  await page.setViewport({ width: 1200, height: 630 });
-  await page.goto(url, { waitUntil: 'networkidle0' });
-  const buffer = await page.screenshot();
-  await browser.close();
+  // Generating the image needs a headless Chrome. Hosted build environments
+  // (Vercel, Netlify, etc.) often can't launch it, so fall back to the site's
+  // default social image instead of failing the whole build.
+  let browser;
+  try {
+    browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1200, height: 630 });
+    await page.goto(url, { waitUntil: 'networkidle0' });
+    const buffer = await page.screenshot();
 
-  fs.mkdirSync(ogImageDir, { recursive: true });
-  fs.writeFileSync(imagePath, buffer);
+    fs.mkdirSync(ogImageDir, { recursive: true });
+    fs.writeFileSync(imagePath, buffer);
+  } catch (error) {
+    console.warn(
+      `[og-image] Could not generate OG image, using default instead: ${error.message}`
+    );
+    return `${process.env.NEXT_PUBLIC_WEBSITE_URL}/social-image.png`;
+  } finally {
+    if (browser) await browser.close().catch(() => {});
+  }
 
   return publicPath;
 }
