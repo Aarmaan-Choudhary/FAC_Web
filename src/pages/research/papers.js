@@ -22,9 +22,21 @@ export const papers = [
       'with Higher-Moment Optimisation and Covariance Shrinkage: A Multi-Estimator Empirical Study on a Diversified ETF Universe',
     type: 'Research Article',
     authors: [
-      { name: 'Aryan Manjunatha', orcid: 'https://orcid.org/0009-0001-1660-3397' },
-      { name: 'Aarmaan Choudhary', orcid: 'https://orcid.org/0009-0007-5480-6674' },
-      { name: 'Archit Rahalkar', orcid: 'https://orcid.org/0009-0000-4887-4960' },
+      {
+        name: 'Aryan Manjunatha',
+        orcid: 'https://orcid.org/0009-0001-1660-3397',
+        linkedin: 'https://www.linkedin.com/in/aryan-manjunatha-689a82254/',
+      },
+      {
+        name: 'Aarmaan Choudhary',
+        orcid: 'https://orcid.org/0009-0007-5480-6674',
+        linkedin: 'https://www.linkedin.com/in/aarmaan-c-625558313/',
+      },
+      {
+        name: 'Archit Rahalkar',
+        orcid: 'https://orcid.org/0009-0000-4887-4960',
+        linkedin: 'https://www.linkedin.com/in/archit-rahalkar-a59b80312/',
+      },
     ],
     affiliation: 'Finance and Analytics Club, Indian Institute of Technology Kanpur',
     date: 'August 2026',

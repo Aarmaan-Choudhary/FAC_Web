@@ -1,6 +1,7 @@
 import { Button } from 'components/Button';
 import { Footer } from 'components/Footer';
 import { Heading } from 'components/Heading';
+import { Icon } from 'components/Icon';
 import { Image } from 'components/Image';
 import { Meta } from 'components/Meta';
 import { Text } from 'components/Text';
@@ -75,21 +76,37 @@ export const ResearchPaper = ({ slug }) => {
                 <ul className={styles.authorList}>
                   {paper.authors.map(author => (
                     <li key={author.name} className={styles.author}>
-                      <Text size="m">{author.name}</Text>
-                      {author.orcid && (
-                        <a
-                          className={styles.orcid}
-                          href={author.orcid}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`ORCID iD of ${author.name}`}
-                        >
-                          <span className={styles.orcidBadge} aria-hidden>
-                            iD
-                          </span>
-                          {author.orcid.replace('https://', '')}
-                        </a>
-                      )}
+                      <Text size="m" className={styles.authorName}>
+                        {author.name}
+                      </Text>
+                      <div className={styles.authorLinks}>
+                        {author.orcid && (
+                          <a
+                            className={styles.profileLink}
+                            href={author.orcid}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`ORCID iD of ${author.name}`}
+                          >
+                            <span className={styles.orcidBadge} aria-hidden>
+                              iD
+                            </span>
+                            {author.orcid.replace('https://', '')}
+                          </a>
+                        )}
+                        {author.linkedin && (
+                          <a
+                            className={styles.profileLink}
+                            href={author.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`LinkedIn profile of ${author.name}`}
+                          >
+                            <Icon icon="linkedin" className={styles.linkedinIcon} aria-hidden />
+                            LinkedIn
+                          </a>
+                        )}
+                      </div>
                     </li>
                   ))}
                 </ul>

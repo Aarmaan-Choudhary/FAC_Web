@@ -212,17 +212,25 @@
   margin: 0;
   padding: 0;
   display: grid;
-  gap: var(--spaceS);
+  gap: var(--spaceL);
 }
 
 .author {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--spaceXS) var(--spaceM);
+  display: grid;
+  gap: var(--spaceXS);
 }
 
-.orcid {
+.authorName {
+  color: var(--colorTextTitle);
+}
+
+.authorLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spaceXS) var(--spaceL);
+}
+
+.profileLink {
   display: inline-flex;
   align-items: center;
   gap: var(--spaceS);
@@ -235,6 +243,11 @@
   &:focus-visible {
     color: rgb(var(--rgbAccent));
   }
+}
+
+.linkedinIcon {
+  width: 16px;
+  height: 16px;
 }
 
 /* ORCID brand mark: green circle with "iD" */
