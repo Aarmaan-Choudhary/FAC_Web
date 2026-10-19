@@ -15,7 +15,7 @@ import {
 } from 'layouts/Project';
 import { Fragment } from 'react';
 import { media } from 'utils/style';
-import { getPaper } from './papers';
+import { authorNames, getPaper } from './papers';
 import styles from './Research.module.css';
 
 export const ResearchPaper = ({ slug }) => {
@@ -31,7 +31,7 @@ export const ResearchPaper = ({ slug }) => {
           description={paper.subtitle}
           url={paper.pdf}
           linkLabel="Open PDF"
-          roles={[paper.authors, paper.date, `${paper.pages} pages`].filter(Boolean)}
+          roles={[authorNames(paper), paper.date, `${paper.pages} pages`].filter(Boolean)}
         />
 
         {hero && (
@@ -68,6 +68,37 @@ export const ResearchPaper = ({ slug }) => {
                   </li>
                 ))}
               </ul>
+              <div className={styles.authors}>
+                <Heading level={5} as="h3" className={styles.authorsTitle}>
+                  Authors
+                </Heading>
+                <ul className={styles.authorList}>
+                  {paper.authors.map(author => (
+                    <li key={author.name} className={styles.author}>
+                      <Text size="m">{author.name}</Text>
+                      {author.orcid && (
+                        <a
+                          className={styles.orcid}
+                          href={author.orcid}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`ORCID iD of ${author.name}`}
+                        >
+                          <span className={styles.orcidBadge} aria-hidden>
+                            iD
+                          </span>
+                          {author.orcid.replace('https://', '')}
+                        </a>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+                {paper.affiliation && (
+                  <Text size="s" as="p" secondary className={styles.affiliation}>
+                    {paper.affiliation}
+                  </Text>
+                )}
+              </div>
             </ProjectTextRow>
             {!!paper.stats?.length && (
               <dl className={styles.stats}>

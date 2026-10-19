@@ -11,7 +11,7 @@ import {
 } from 'layouts/Project';
 import RouterLink from 'next/link';
 import { Fragment } from 'react';
-import { papers } from './papers';
+import { authorNames, papers } from './papers';
 import styles from './Research.module.css';
 
 const title = 'Research Papers';
@@ -44,6 +44,9 @@ export const Research = () => (
                       {paper.subtitle}
                     </Text>
                   )}
+                  <Text className={styles.cardAuthors} size="s" as="p">
+                    {authorNames(paper)}
+                  </Text>
                   <Text className={styles.cardSummary} size="m" as="p" secondary>
                     {paper.summary}
                   </Text>

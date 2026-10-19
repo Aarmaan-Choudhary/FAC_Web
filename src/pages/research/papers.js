@@ -21,9 +21,14 @@ export const papers = [
     subtitle:
       'with Higher-Moment Optimisation and Covariance Shrinkage: A Multi-Estimator Empirical Study on a Diversified ETF Universe',
     type: 'Research Article',
-    authors: 'Finance & Analytics Club, IIT Kanpur',
+    authors: [
+      { name: 'Aryan Manjunatha', orcid: 'https://orcid.org/0009-0001-1660-3397' },
+      { name: 'Aarmaan Choudhary', orcid: 'https://orcid.org/0009-0007-5480-6674' },
+      { name: 'Archit Rahalkar', orcid: 'https://orcid.org/0009-0000-4887-4960' },
+    ],
+    affiliation: 'Finance and Analytics Club, Indian Institute of Technology Kanpur',
     date: 'August 2026',
-    pages: 42,
+    pages: 35,
     pdf: '/research/factor-augmented-black-litterman.pdf',
     summary:
       'A Black-Litterman framework that combines Bayesian return estimation, five covariance estimators, higher-moment optimisation and risk parity on a twelve-ETF, nine-asset-class universe, and shows that covariance conditioning, not point-estimate accuracy, drives allocation stability.',
@@ -101,3 +106,11 @@ export const papers = [
 ];
 
 export const getPaper = slug => papers.find(paper => paper.slug === slug);
+
+/** "A, B and C" */
+export const authorNames = paper => {
+  const names = (paper.authors || []).map(author => author.name);
+  return names.length > 1
+    ? `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`
+    : names[0] || '';
+};
