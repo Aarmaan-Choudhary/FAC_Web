@@ -44,36 +44,41 @@ import y19_c from 'assets/empty.png';
 import y19_d from 'assets/empty.png';
 
 
-import secretary1 from 'assets/kethan.png';
-import secretary2 from 'assets/akshat.jpg';
-import secretary3 from 'assets/ankit.jpg';
-import secretary4 from 'assets/aman.jpg';
-import secretary5 from 'assets/khush.jpg';
-import secretary6 from 'assets/keshav.jpg';
-import secretary7 from 'assets/anurag.jpg';
-import secretary8 from 'assets/aarush.jpeg';
-import secretary9 from 'assets/aarnav.jpg';
-import secretary10 from 'assets/ayush_singh.jpg';
-import secretary11 from 'assets/atit.jpg';
-import secretary12 from 'assets/pallav.jpg';
-import secretary13 from 'assets/neel.jpg';
-import secretary14 from 'assets/kushagra.jpg';
-import secretary15 from 'assets/Siddharth.jpg';
-import secretary16 from 'assets/ashish.jpg';
-import secretary17 from 'assets/ayush.jpg';
-import secretary18 from 'assets/harsh.jpg';
-import secretary19 from 'assets/sanchit.jpg';
-import secretary20 from 'assets/atishay.jpg';
-import secretary21 from 'assets/shivam.jpg';
-import secretary22 from 'assets/manit.jpeg';
-import secretary23 from 'assets/nischay.jpeg';
-import secretary24 from 'assets/shreyansh.jpg';
-import secretary25 from 'assets/arihant.jpg';
-import secretary26 from 'assets/hansika.png';
-import secretary27 from 'assets/om.jpg';
-import secretary28 from 'assets/nitin.jpg';
-import secretary29 from 'assets/pranav.jpg';
 
+
+import sec_aditya_dum from 'assets/secretaries/aditya_dum.jpg';
+import sec_ananya_garg from 'assets/secretaries/ananya_garg.jpg';
+import sec_arpit_narayan_singh from 'assets/secretaries/arpit_narayan_singh.jpg';
+import sec_arush_jain from 'assets/secretaries/arush_jain.jpg';
+import sec_aryaman_singh from 'assets/secretaries/aryaman_singh.jpg';
+import sec_bhavya_goel from 'assets/secretaries/bhavya_goel.jpg';
+import sec_chhavi_yadav from 'assets/secretaries/chhavi_yadav.jpg';
+import sec_ekansh_jain from 'assets/secretaries/ekansh_jain.jpg';
+import sec_harshita_sharma from 'assets/secretaries/harshita_sharma.jpg';
+import sec_kavya_yadav from 'assets/secretaries/kavya_yadav.jpg';
+import sec_khushi_jain from 'assets/secretaries/khushi_jain.jpg';
+import sec_krish_shah from 'assets/secretaries/krish_shah.jpg';
+import sec_kunj_chaudhary from 'assets/secretaries/kunj_chaudhary.jpg';
+import sec_lakshya_kundnani from 'assets/secretaries/lakshya_kundnani.jpg';
+import sec_maahin_sethi from 'assets/secretaries/maahin_sethi.jpg';
+import sec_nikhil from 'assets/secretaries/nikhil.jpg';
+import sec_nilmani_jha from 'assets/secretaries/nilmani_jha.jpg';
+import sec_priyanshu from 'assets/secretaries/priyanshu.jpg';
+import sec_samkit_jain from 'assets/secretaries/samkit_jain.jpg';
+import sec_samyak from 'assets/secretaries/samyak.jpg';
+import sec_sathvik_narayanan from 'assets/secretaries/sathvik_narayanan.jpg';
+import sec_shreya_gaur from 'assets/secretaries/shreya_gaur.jpg';
+import sec_shrihan_mittal from 'assets/secretaries/shrihan_mittal.jpg';
+import sec_sreyan_majumder from 'assets/secretaries/sreyan_majumder.jpg';
+import sec_srijan_garg from 'assets/secretaries/srijan_garg.jpg';
+import sec_srikar_kandula from 'assets/secretaries/srikar_kandula.jpg';
+import sec_stuti_jain from 'assets/secretaries/stuti_jain.jpg';
+import sec_sumedh_gokavi from 'assets/secretaries/sumedh_gokavi.jpg';
+import sec_tulip_khatri from 'assets/secretaries/tulip_khatri.jpg';
+import sec_udhav_sharma from 'assets/secretaries/udhav_sharma.jpg';
+import sec_vaibhav_maheshwari from 'assets/secretaries/vaibhav_maheshwari.jpg';
+import sec_vidilt_krelia from 'assets/secretaries/vidilt_krelia.jpg';
+import sec_vivaan_awasthi from 'assets/secretaries/vivaan_awasthi.jpg';
 
 // Array of image sources
 const coordinatorImages = [
@@ -104,35 +109,39 @@ const y19Images = [
 ];
 
 const secretariesImages = [
-  { src: secretary1, alt: 'Kethan', name: 'Kethan Challa' },
-  { src: secretary2, alt: 'Akshat', name: 'Akshat Garg' },
-  { src: secretary3, alt: 'Ankit', name: 'Ankit Kumar' },
-  // { src: secretary4, alt: 'Aman', name: 'Aman Sanwal' },
-  { src: secretary5, alt: 'Khush', name: 'Khush Maheshwari' },
-  { src: secretary6, alt: 'Keshav', name: 'Keshav Bansal' },
-  { src: secretary7, alt: 'Anurag', name: 'Anurag Thakur' },
-  { src: secretary8, alt: 'Aarush', name: 'Aarush Singh' },
-  { src: secretary9, alt: 'Aarnav', name: 'Aarnav Gupta' },
-  { src: secretary10, alt: 'Ayush Singh', name: 'Ayush Kumar Singh ' },
-  { src: secretary11, alt: 'Atit', name: 'Atit Kumar Satsangi' },
-  { src: secretary12, alt: 'Pallav', name: 'Pallav Rastogi' },
-  { src: secretary13, alt: 'Neel', name: 'Neel D Jadia' },
-  { src: secretary14, alt: 'Kushagra', name: 'Kushagra Tiwari' },
-  { src: secretary15, alt: 'Siddharth', name: 'Siddharth Jaiswal' },
-  // { src: secretary16, alt: 'Ashish', name: 'Ashish Upadhyay' },
-  { src: secretary17, alt: 'Ayush', name: 'Ayush Omer' },
-  { src: secretary18, alt: 'Harsh', name: 'Harshvardhan Gaur' },
-  { src: secretary19, alt: 'Sanchit', name: 'Sanchit Arora' },
-  { src: secretary20, alt: 'Atishay', name: 'Atishay Jain' },
-  { src: secretary21, alt: 'Shivam', name: 'Shivam Tomar' },
-  { src: secretary22, alt: 'Manit', name: 'Manit Kapoor' },
-  { src: secretary23, alt: 'Nischay', name: 'Nischay Agrawal' },
-  // { src: secretary24, alt: 'Shreyansh', name: 'Shreyansh Tarawat' },
-  { src: secretary25, alt: 'Arihant', name: 'Arihant Satpathy' },
-  { src: secretary26, alt: 'Hansika', name: 'Hansika Gupta' },
-  { src: secretary27, alt: 'Om', name: 'Om Bhartiya' },
-  { src: secretary28, alt: 'Nitin', name: 'Nitin Maheshwari' },
-  { src: secretary29, alt: 'Pranav', name: 'Pranav Krishna' },  
+  { src: sec_aditya_dum, alt: 'Aditya Dum', name: 'Aditya Dum' },
+  { src: sec_ananya_garg, alt: 'Ananya Garg', name: 'Ananya Garg' },
+  { src: sec_arpit_narayan_singh, alt: 'Arpit Narayan Singh', name: 'Arpit Narayan Singh' },
+  { src: sec_arush_jain, alt: 'Arush Jain', name: 'Arush Jain' },
+  { src: sec_aryaman_singh, alt: 'Aryaman Singh', name: 'Aryaman Singh' },
+  { src: sec_bhavya_goel, alt: 'Bhavya Goel', name: 'Bhavya Goel' },
+  { src: sec_chhavi_yadav, alt: 'Chhavi Yadav', name: 'Chhavi Yadav' },
+  { src: sec_ekansh_jain, alt: 'Ekansh Jain', name: 'Ekansh Jain' },
+  { src: sec_harshita_sharma, alt: 'Harshita Sharma', name: 'Harshita Sharma' },
+  { src: sec_kavya_yadav, alt: 'Kavya Yadav', name: 'Kavya Yadav' },
+  { src: sec_khushi_jain, alt: 'Khushi Jain', name: 'Khushi Jain' },
+  { src: sec_krish_shah, alt: 'Krish Shah', name: 'Krish Shah' },
+  { src: sec_kunj_chaudhary, alt: 'Kunj Chaudhary', name: 'Kunj Chaudhary' },
+  { src: sec_lakshya_kundnani, alt: 'Lakshya Kundnani', name: 'Lakshya Kundnani' },
+  { src: sec_maahin_sethi, alt: 'Maahin Sethi', name: 'Maahin Sethi' },
+  { src: sec_nikhil, alt: 'Nikhil', name: 'Nikhil' },
+  { src: sec_nilmani_jha, alt: 'Nilmani Jha', name: 'Nilmani Jha' },
+  { src: sec_priyanshu, alt: 'Priyanshu', name: 'Priyanshu' },
+  { src: sec_samkit_jain, alt: 'Samkit Jain', name: 'Samkit Jain' },
+  { src: sec_samyak, alt: 'Samyak', name: 'Samyak' },
+  { src: sec_sathvik_narayanan, alt: 'Sathvik Narayanan', name: 'Sathvik Narayanan' },
+  { src: sec_shreya_gaur, alt: 'Shreya Gaur', name: 'Shreya Gaur' },
+  { src: sec_shrihan_mittal, alt: 'Shrihan Mittal', name: 'Shrihan Mittal' },
+  { src: sec_sreyan_majumder, alt: 'Sreyan Majumder', name: 'Sreyan Majumder' },
+  { src: sec_srijan_garg, alt: 'Srijan Garg', name: 'Srijan Garg' },
+  { src: sec_srikar_kandula, alt: 'Srikar Kandula', name: 'Srikar Kandula' },
+  { src: sec_stuti_jain, alt: 'Stuti Jain', name: 'Stuti Jain' },
+  { src: sec_sumedh_gokavi, alt: 'Sumedh Gokavi', name: 'Sumedh Gokavi' },
+  { src: sec_tulip_khatri, alt: 'Tulip Khatri', name: 'Tulip Khatri' },
+  { src: sec_udhav_sharma, alt: 'Udhav Sharma', name: 'Udhav Sharma' },
+  { src: sec_vaibhav_maheshwari, alt: 'Vaibhav Maheshwari', name: 'Vaibhav Maheshwari' },
+  { src: sec_vidilt_krelia, alt: 'Vidilt Krelia', name: 'Vidilt Krelia' },
+  { src: sec_vivaan_awasthi, alt: 'Vivaan Awasthi', name: 'Vivaan Awasthi' },
 ];
 
 export const Team = () => {
