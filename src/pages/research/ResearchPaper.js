@@ -38,7 +38,7 @@ export const ResearchPaper = ({ slug }) => {
         {hero && (
           <ProjectSection padding="top">
             <ProjectSectionContent>
-              <figure className={styles.figure}>
+              <figure className={styles.figure} data-light={!!hero.light}>
                 <Image
                   reveal
                   delay={300}
@@ -157,7 +157,11 @@ export const ResearchPaper = ({ slug }) => {
             <ProjectSectionContent>
               <div className={styles.figureGrid}>
                 {figures.map(figure => (
-                  <figure key={figure.caption} className={styles.figure}>
+                  <figure
+                    key={figure.caption}
+                    className={styles.figure}
+                    data-light={!!figure.light}
+                  >
                     <Image
                       reveal
                       srcSet={figure.srcSet}

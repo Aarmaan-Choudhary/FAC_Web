@@ -94,6 +94,14 @@
   margin: 0;
 }
 
+/* figures drawn on white: show them on a white card so they sit well on the dark page */
+.figure[data-light='true'] > :first-child {
+  background: #fff;
+  border-radius: 8px;
+  padding: var(--spaceM);
+  overflow: hidden;
+}
+
 .caption {
   display: block;
   margin-top: var(--spaceM);
