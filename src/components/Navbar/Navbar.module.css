@@ -184,7 +184,9 @@
   text-align: center;
   text-decoration: none;
   color: var(--colorTextBody);
-  padding: var(--spaceL);
+  font-weight: var(--fontWeightMedium);
+  letter-spacing: 0.02em;
+  padding: var(--spaceM) var(--spaceL);
   opacity: 0;
   transition-property: opacity;
   transition-duration: var(--durationS);
@@ -206,16 +208,44 @@
     --headerNavFontSize: calc((18 / 16) * 1rem);
   }
 
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+
+  /* hover only where a real pointer can hover, so a tap doesn't leave it highlighted */
+  @media (hover: hover) {
+    &:hover {
+      color: rgb(var(--rgbAccent));
+    }
+  }
+
+  &:focus-visible,
+  &[aria-current='page'] {
+    color: rgb(var(--rgbAccent));
+  }
+
+  &[data-visible='true'] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.mobileNavLabel {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+
+  /* short underline under the word itself, sliding in from the left */
   &::after {
     content: '';
     position: absolute;
-    top: 50%;
-    right: var(--space3XL);
-    left: var(--space3XL);
-    height: 4px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    border-radius: 2px;
     background: rgb(var(--rgbAccent));
-    transform: scaleX(0) translateY(-1px);
-    transform-origin: right;
+    transform: scaleX(0);
+    transform-origin: left;
   }
 
   @media (--mediaUseMotion) {
@@ -223,18 +253,17 @@
       transition: transform var(--durationM) var(--bezierFastoutSlowin);
     }
   }
+}
 
-  &:hover::after,
-  &:active::after,
-  &:focus::after {
-    transform: scaleX(1) translateY(-1px);
-    transform-origin: left;
+@media (hover: hover) {
+  .mobileNavLink:hover .mobileNavLabel::after {
+    transform: scaleX(1);
   }
+}
 
-  &[data-visible='true'] {
-    opacity: 1;
-    transform: none;
-  }
+.mobileNavLink:focus-visible .mobileNavLabel::after,
+.mobileNavLink[aria-current='page'] .mobileNavLabel::after {
+  transform: scaleX(1);
 }
 
 .iconContainer {

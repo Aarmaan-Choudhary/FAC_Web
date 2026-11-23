@@ -183,7 +183,7 @@ export const Navbar = () => {
                     ),
                   })}
                 >
-                  {label}
+                  <span className={styles.mobileNavLabel}>{label}</span>
                 </a>
               </RouterLink>
             ))}
