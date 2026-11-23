@@ -1,3 +1,4 @@
+import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from 'components/Table';
 import { Code } from 'components/Code';
 import { Heading } from 'components/Heading';
 import { Icon } from 'components/Icon';
@@ -138,5 +139,11 @@ export const postMarkdown = {
   hr: PostHr,
   img: PostImage,
   strong: PostStrong,
+  table: Table,
+  thead: TableHead,
+  tbody: TableBody,
+  tr: TableRow,
+  th: TableHeadCell,
+  td: TableCell,
   Embed,
 };
