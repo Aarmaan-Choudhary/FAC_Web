@@ -27,6 +27,10 @@ import coordinator1 from 'assets/coordinator1.jpg';
 import coordinator2 from 'assets/coordinator2.jpg';
 import coordinator3 from 'assets/coordinator3.jpg';
 import coordinator4 from 'assets/coordinator4.png';
+import coordAarmaan from 'assets/coord_aarmaan_choudhary.jpg';
+import coordArchit from 'assets/coord_archit_rahalkar.jpg';
+import coordKritin from 'assets/coord_kritin_khowala.jpg';
+import coordSthit from 'assets/coord_sthit_pragye.jpg';
 
 import y21_a from 'assets/y21_a.jpg';
 import y21_b from 'assets/y21_b.jpg';
@@ -82,6 +86,13 @@ import sec_vivaan_awasthi from 'assets/secretaries/vivaan_awasthi.jpg';
 
 // Array of image sources
 const coordinatorImages = [
+  { src: coordAarmaan, alt: 'Aarmaan Choudhary', name: 'Aarmaan Choudhary' },
+  { src: coordArchit, alt: 'Archit Rahalkar', name: 'Archit Rahalkar' },
+  { src: coordKritin, alt: 'Kritin Khowala', name: 'Kritin Khowala' },
+  { src: coordSthit, alt: 'Sthit Pragye', name: 'Sthit Pragye' },
+];
+
+const y22Images = [
   { src: coordinator1, alt: 'Naman Sethi', name: 'Naman Sethi' },
   { src: coordinator2, alt: 'Tanush Goel', name: 'Tanush Goel' },
   { src: coordinator3, alt: 'Moni Dutt', name: 'Moni Dutt' },
@@ -376,6 +387,26 @@ export const Team = () => {
         ))}
       </div>
 
+      <Heading className={styles.heading} data-visible={0} level={4} id={0}>
+        <DecoderText text="Y22 Coordinators" start={1} delay={500} />
+      </Heading>
+      <div className={styles.secretariesContainer}>
+        {y22Images.map((image, index) => (
+          <div key={index}>
+            <Image
+              key={index}
+              reveal
+              delay={100}
+              placeholder={image.src}
+              srcSet={[image.src]}
+              sizes="40vw, 480px"
+              alt={image.alt}
+              className={styles.image}
+            />
+            <p className={styles.imageName}>{image.name}</p>
+          </div>
+        ))}
+      </div>
       <Heading className={styles.heading} data-visible={0} level={4} id={0}>
         <DecoderText text="Y21 Coordinators" start={1} delay={500} />
       </Heading>
